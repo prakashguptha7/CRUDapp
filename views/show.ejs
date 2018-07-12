@@ -1,0 +1,12 @@
+<% include partials/header%>
+<div class="container">
+ <h1><%=gallary.name%></h1>
+<img src="<%= gallary.image%>">
+<p><%= gallary.description%></p>
+<a class="btn btn-success" href="/gallaries/<%=gallary._id%>/edit">Edit</a>
+<a class="btn btn-info btn-large" href="/gallaries">Go Back to Gallary</a>
+<form action="/gallaries/<%=gallary._id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger" style="margin-top:0.5%">Delete</button>
+    </form>
+</div>    
+<% include partials/footer%>

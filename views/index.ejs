@@ -1,0 +1,32 @@
+<% include partials/header%>
+<link rel="stylesheet" type="text/css" href="indexstyle.css">
+<div class = "container">
+<header class="jumbotron">
+        <div class="container">
+           <h1>Welcome to gallary </h1>
+             <p>view our hand pick-up galaries</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/gallaries/new">Add new image</a>
+             </p>
+      </div>
+   </header>
+   <div class="container">
+  <div class="row text-center" style="display: flex;flex-wrap: wrap;">
+     <% gallaries.forEach(function(gallary){%>
+      <div class="col-md-4">
+        <div class="thumbnail">
+           <img src="<%= gallary.image %>">
+       <div class="caption">
+         <h4><%=gallary.name%></h4>
+      <p>
+        <a href="/gallaries/<%= gallary._id%>" class="btn btn-info">more info</a>
+        <a  href="/gallaries/<%=gallary._id%>/edit" class="btn btn-success">Edit</a>
+      </p> 
+ </div>
+</div>
+</div>
+</div>
+</div>
+<% });%>
+</div>
+<% include partials/footer%>
